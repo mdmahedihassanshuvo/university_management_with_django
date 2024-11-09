@@ -1,0 +1,51 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Django migrations
+*/migrations/
+
+# Database files
+*.sqlite3
+
+# Environment variables file
+.env
+
+# Virtual environment directory
+venv/
+env/
+*.env/
+
+# IDE configuration files
+.vscode/
+.idea/
+
+# PyCharm
+*.iml
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Coverage reports
+.coverage
+.coverage.*
+nosetests.xml
+test_*.xml
+*.log
+
+# Docker files
+*.docker
+.docker/
+
+# Static files
+/static/
+
+# Media files
+/media/
+
+# Local development settings
+local_settings.py
