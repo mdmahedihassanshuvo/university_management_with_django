@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import AcademicSemester, AcademicFaculty, AcademicProgram
 
 
-@admin.site.register(AcademicSemester)
+@admin.register(AcademicSemester)
 class AcademicSemesterAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -16,14 +16,14 @@ class AcademicSemesterAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
 
 
-@admin.site.register(AcademicFaculty)
+@admin.register(AcademicFaculty)
 class AcademicFacultyAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at', 'updated_at')
     search_fields = ('name',)
     ordering = ('-created_at',)
 
 
-@admin.site.register(AcademicProgram)
+@admin.register(AcademicProgram)
 class AcademicProgramAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'eke_name', 'academic_faculty'
