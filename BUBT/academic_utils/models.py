@@ -4,7 +4,7 @@ from django.db import models
 class AcademicSemester(models.Model):
     name = models.CharField(max_length=100, unique=True)
     year = models.CharField(max_length=4)
-    code = models.IntegerField(max_length=1)
+    code = models.CharField(max_length=1)
     start_month = models.DateField()
     end_month = models.DateField()
     created_at = models.DateField(auto_now_add=True)
