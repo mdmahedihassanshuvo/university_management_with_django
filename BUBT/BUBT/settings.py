@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,6 +57,21 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
+CELERY_BEAT_SCHEDULE = {
+    'create-semester-every-year': {
+        'task': 'academic_utils.tasks.create_semester_task',
+        'schedule': crontab(minute=0, hour=0, day_of_month=1, month_of_year=1),
+    },
+}
+
+# Celery Configuration
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
 
 ROOT_URLCONF = 'BUBT.urls'
 

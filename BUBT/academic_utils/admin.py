@@ -5,29 +5,28 @@ from .models import AcademicSemester, AcademicFaculty, AcademicProgram
 @admin.register(AcademicSemester)
 class AcademicSemesterAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'name',
         'year',
-        'code',
-        'start_month',
-        'end_month'
+        'code'
     )
-    search_fields = ('name', 'year', 'code')
-    list_filter = ('year', 'start_month', 'end_month')
-    ordering = ('-created_at',)
+    list_filter = ('year',)
+    search_fields = ('name',)
+    ordering = ('id',)
 
 
 @admin.register(AcademicFaculty)
 class AcademicFacultyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'created_at', 'updated_at')
+    list_display = ('id', 'name', 'created_at', 'updated_at')
     search_fields = ('name',)
-    ordering = ('-created_at',)
+    ordering = ('id',)
 
 
 @admin.register(AcademicProgram)
 class AcademicProgramAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'eke_name', 'academic_faculty'
+        'id', 'name', 'eke_name', 'academic_faculty'
     )
     search_fields = ('name', 'eke_name')
     list_filter = ('academic_faculty',)
-    ordering = ('-created_at',)
+    ordering = ('id',)
