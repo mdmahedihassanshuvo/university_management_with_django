@@ -7,7 +7,7 @@ class User(models.Model):
         ('student', 'STUDENT'),
         ('teacher', 'TEACHER')
     ]
-    identifier = models.CharField(max_length=20, default=1)
+    user_name = models.CharField(max_length=20, default=1)
     password = models.CharField(max_length=20)
     needPasswordChange = models.BooleanField(default=True)
     role = models.CharField(max_length=10, choices=ROLE_CHOICE)
