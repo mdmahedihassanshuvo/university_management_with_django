@@ -2,6 +2,7 @@ from django.db import models
 
 # FROM LOCAL IMPORTS
 from academic_utils.models import AcademicFaculty
+from user.models import User
 
 
 class Faculty(models.Model):
@@ -10,6 +11,11 @@ class Faculty(models.Model):
         ('female', 'FEMALE'),
         ('other', 'OTHER')
     ]
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        default=1
+    )
     name = models.CharField(max_length=50)
     designation = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, unique=True)
@@ -18,6 +24,7 @@ class Faculty(models.Model):
     date_of_birth = models.DateField()
     present_address = models.CharField(max_length=100)
     permanent_address = models.CharField(max_length=100)
+    status = models.BooleanField(default=True)
     profile_image = models.ImageField(upload_to='profile_image/faculty/')
     academic_faculty = models.ForeignKey(
         AcademicFaculty,

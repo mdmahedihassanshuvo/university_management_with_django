@@ -15,9 +15,10 @@
     ```
 
 2. ### Install Django and startproject
-    - Install `Django` v3 using `pip` within your `venv`
+    - Install `Django` v5 using `pip` within your `venv`
     ```shell script
     pip install django
+    pip install djangorestframework
     python -m pip install Pillow
     pip install celery
     sudo apt-get update

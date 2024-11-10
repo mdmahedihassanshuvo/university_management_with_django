@@ -1,5 +1,6 @@
 from django.db import models
 from academic_utils.models import AcademicSemester
+from user.models import User
 
 
 class Student(models.Model):
@@ -13,6 +14,11 @@ class Student(models.Model):
         ('mother', 'MOTHER'),
         ('other', 'OTHER')
     ]
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        default=1
+    )
     name = models.CharField(max_length=50)
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     date_of_birth = models.DateField()
@@ -23,6 +29,7 @@ class Student(models.Model):
     guardian = models.CharField(max_length=6, choices=GUARDIAN_CHOICES)
     guardian_name = models.CharField(max_length=50)
     profile_image = models.ImageField(upload_to='profile_image/student/')
+    status = models.BooleanField(default=True)
     academic_semester = models.ForeignKey(
         AcademicSemester,
         on_delete=models.SET_NULL,
