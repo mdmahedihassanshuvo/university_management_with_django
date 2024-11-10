@@ -1,3 +1,5 @@
+## Note please delete the venv file (also have inside one) and create new after you can follow the process and run the project.
+
 1. ### Prepare project directory
     - Make your project directory (must be the same name as your github repository name)
     - Work from the project directory as current directory using `cd`.
