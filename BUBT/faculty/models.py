@@ -1,3 +1,4 @@
+# FROM DJANGO IMPORTS
 from django.db import models
 
 # FROM LOCAL IMPORTS
