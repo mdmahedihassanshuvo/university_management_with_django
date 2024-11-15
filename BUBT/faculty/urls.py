@@ -7,4 +7,9 @@ urlpatterns = [
         FacultyViewSet.as_view(),
         name='create_faculty'
     ),
+    path(
+        'faculties/',
+        FacultyViewSet.as_view(),
+        name='get_faculties'
+    )
 ]

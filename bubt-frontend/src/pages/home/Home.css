@@ -1,0 +1,8 @@
+.home-container{
+    margin-top: 0;
+    background-color: #31cbd6;
+    min-height: calc(100vh - 56px);
+}
+.text-container{
+    background-color: #fff;
+}
